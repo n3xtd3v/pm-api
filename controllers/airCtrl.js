@@ -12,6 +12,14 @@ const airCtrl = {
       return res.status(500).json({ msg: err.message })
     }
   },
+
+  getTest: async (req, res) => {
+    try {
+      return res.status(200).json({ msg: 'Test' })
+    } catch (err) {
+      return res.status(500).json({ msg: err.message })
+    }
+  },
 }
 
 module.exports = airCtrl
