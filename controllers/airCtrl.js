@@ -1,7 +1,7 @@
 const mssql = require('mssql')
 
 const airCtrl = {
-  getAir: async (req, res) => {
+  getAirIn: async (req, res) => {
     try {
       const air = await mssql.query`
       SELECT * 
@@ -13,9 +13,13 @@ const airCtrl = {
     }
   },
 
-  getTest: async (req, res) => {
+  getAirOut: async (req, res) => {
     try {
-      return res.status(200).json({ msg: 'Test' })
+      const air = await mssql.query`
+      SELECT * 
+      FROM PM_Hospital2
+      `
+      return res.status(200).json({ air: air.recordset[0] })
     } catch (err) {
       return res.status(500).json({ msg: err.message })
     }

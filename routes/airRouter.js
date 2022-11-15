@@ -1,8 +1,8 @@
 const router = require('express').Router()
 const airCtrl = require('../controllers/airCtrl')
 
-router.get('/air', airCtrl.getAir)
+router.get('/airin', airCtrl.getAirIn)
 
-router.get('/airTest', airCtrl.getTest)
+router.get('/airout', airCtrl.getAirOut)
 
 module.exports = router
